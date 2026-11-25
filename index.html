@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f4f7f5">
+  <meta name="description" content="CampusMood: registra cómo te sientes y encuentra pausas activas para tu día.">
+  <title>CampusMood – Monitor del Estado de Ánimo y Pausas Activas</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <input class="screen-switch" type="radio" name="screen" id="screen-home" aria-label="Pantalla de inicio" checked>
+  <input class="screen-switch" type="radio" name="screen" id="screen-check-in" aria-label="Pantalla de registro">
+  <input class="screen-switch" type="radio" name="screen" id="screen-break" aria-label="Pantalla de pausa activa">
+  <input class="screen-switch" type="radio" name="screen" id="screen-history" aria-label="Pantalla de historial">
+  <input class="screen-switch" type="checkbox" id="help-toggle" aria-label="Mostrar ayuda de Bienestar Universitario">
+
+  <div class="app-shell">
+    <header class="site-header">
+      <label class="brand" for="screen-home">
+        <span class="brand-mark" aria-hidden="true">cm</span>
+        <span>Campus<span class="brand-accent">Mood</span></span>
+      </label>
+      <span class="header-note">Un momento para ti</span>
+    </header>
+
+    <main>
+      <section class="screen home-screen" id="home" aria-labelledby="home-title">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="status-dot"></span> TU ESPACIO DE BIENESTAR</p>
+          <h1 id="home-title">Haz una pausa.<br><span>¿Cómo estás?</span></h1>
+          <p class="hero-subtitle">Monitor del Estado de Ánimo y Pausas Activas</p>
+          <p class="welcome-copy">Hola, qué bueno que estás aquí. Regálate un momento para escuchar cómo te sientes.</p>
+          <div class="action-stack">
+            <label class="button button-primary" for="screen-check-in">Registrar cómo me siento <span aria-hidden="true">→</span></label>
+            <label class="button button-secondary" for="screen-history">Ver mi historial</label>
+          </div>
+          <p class="privacy-note"><span aria-hidden="true">♡</span> Tus momentos son personales y merecen cuidado.</p>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <div class="sun"></div>
+          <div class="art-card">
+            <span class="art-sparkle">✳</span>
+            <span class="art-face">☺</span>
+            <span class="art-caption">Respira.<br>Estás aquí.</span>
+          </div>
+          <span class="art-orbit orbit-one"></span>
+          <span class="art-orbit orbit-two"></span>
+          <span class="art-leaf leaf-one"></span>
+          <span class="art-leaf leaf-two"></span>
+        </div>
+      </section>
+
+      <section class="screen check-in-screen" id="check-in" aria-labelledby="check-in-title">
+        <div class="section-heading">
+          <p class="eyebrow">REGISTRO DIARIO <span class="heading-line"></span></p>
+          <h1 id="check-in-title">¿Cómo te sientes hoy?</h1>
+          <p>No hay respuestas correctas o incorrectas. Elige lo que mejor te represente.</p>
+        </div>
+
+        <fieldset class="mood-fieldset">
+          <legend class="visually-hidden">Selecciona tu estado de ánimo</legend>
+          <div class="mood-options">
+            <label class="mood-option">
+              <input type="radio" name="mood" value="5" required>
+              <span class="mood-emoji" aria-hidden="true">😄</span><span class="mood-label"><strong>5</strong> Muy bien</span>
+            </label>
+            <label class="mood-option">
+              <input type="radio" name="mood" value="4">
+              <span class="mood-emoji" aria-hidden="true">🙂</span><span class="mood-label"><strong>4</strong> Bien</span>
+            </label>
+            <label class="mood-option">
+              <input type="radio" name="mood" value="3">
+              <span class="mood-emoji" aria-hidden="true">😐</span><span class="mood-label"><strong>3</strong> Regular</span>
+            </label>
+            <label class="mood-option">
+              <input type="radio" name="mood" value="2">
+              <span class="mood-emoji" aria-hidden="true">😟</span><span class="mood-label"><strong>2</strong> Mal</span>
+            </label>
+            <label class="mood-option">
+              <input type="radio" name="mood" value="1">
+              <span class="mood-emoji" aria-hidden="true">😣</span><span class="mood-label"><strong>1</strong> Muy mal</span>
+            </label>
+          </div>
+        </fieldset>
+
+        <div class="comment-field">
+          <label for="comment">¿Quieres contar algo más? <span>(opcional)</span></label>
+          <textarea id="comment" name="comment" maxlength="140" placeholder="Escribe una nota para ti..." aria-describedby="comment-help comment-count"></textarea>
+          <div class="comment-meta">
+            <span id="comment-help">Solo tú decides qué compartir.</span>
+            <span id="comment-count" aria-live="polite">0/140</span>
+          </div>
+          <p class="error-message" id="check-in-error" role="alert" hidden>Selecciona una opción para guardar tu registro.</p>
+        </div>
+
+        <div class="button-row">
+          <button class="button button-primary" id="save-record" type="button">Guardar <span aria-hidden="true">→</span></button>
+          <label class="button button-text" for="screen-home">Volver</label>
+        </div>
+      </section>
+
+      <section class="screen break-screen" id="break" aria-labelledby="break-title">
+        <div class="saved-banner" id="saved-message" role="status"><span aria-hidden="true">✓</span> Registro guardado</div>
+        <div class="break-layout">
+          <div class="break-intro">
+            <p class="eyebrow">PAUSA ACTIVA <span class="heading-line"></span></p>
+            <h1 id="break-title">Pausa activa</h1>
+            <p class="duration"><span aria-hidden="true">◷</span> <span id="break-duration">2 minutos</span></p>
+            <p class="support-quote" id="break-phrase"></p>
+          </div>
+          <div class="steps-card">
+            <h2>Una pausa, paso a paso</h2>
+            <ol id="pause-instructions"></ol>
+          </div>
+        </div>
+
+        <div class="help-area">
+          <label class="help-trigger" for="help-toggle">¿Necesitas hablar con alguien? <span aria-hidden="true">＋</span></label>
+          <aside class="wellbeing-help" id="wellbeing-help" aria-labelledby="help-title">
+            <p class="eyebrow">ESTAMOS PARA ACOMPAÑARTE</p>
+            <h2 id="help-title">Bienestar Universitario</h2>
+            <p>Si necesitas apoyo, acércate al equipo de Bienestar Universitario de tu campus. Puedes conversar con una persona de confianza y preguntar por los servicios disponibles.</p>
+            <p class="help-reminder">Pedir compañía también es una forma de cuidarte.</p>
+          </aside>
+        </div>
+        <div class="button-row">
+          <label class="button button-primary" for="screen-history">Ver mi historial <span aria-hidden="true">→</span></label>
+          <label class="button button-text" for="screen-home">Inicio</label>
+        </div>
+      </section>
+
+      <section class="screen history-screen" id="history" aria-labelledby="history-title">
+        <div class="section-heading history-heading">
+          <p class="eyebrow">TUS REGISTROS <span class="heading-line"></span></p>
+          <h1 id="history-title">Mi semana</h1>
+          <p>Un vistazo amable a los momentos que has registrado.</p>
+        </div>
+
+        <div class="summary-grid">
+          <article class="summary-card">
+            <span class="summary-label">Promedio semanal</span>
+            <p class="summary-value" id="weekly-average">—</p>
+            <span class="summary-caption">de tus últimos registros</span>
+          </article>
+          <article class="summary-card">
+            <span class="summary-label">Estado más frecuente</span>
+            <p class="summary-value frequent-mood" id="frequent-state">—</p>
+            <span class="summary-caption">esta semana</span>
+          </article>
+        </div>
+
+        <section class="chart-card" aria-labelledby="chart-title">
+          <div class="card-heading">
+            <h2 id="chart-title">Tu ánimo, día a día</h2>
+            <span class="chart-legend"><span></span> Nivel (1–5)</span>
+          </div>
+          <div class="chart" id="mood-chart" role="img" aria-label="Gráfico semanal de niveles de ánimo del 1 al 5"></div>
+        </section>
+
+        <section class="records" aria-labelledby="records-title">
+          <h2 id="records-title">Registros recientes</h2>
+          <ul class="record-list" id="record-list"></ul>
+          <p class="empty-state" id="empty-state" hidden>Aún no hay registros</p>
+        </section>
+
+        <div class="button-row history-actions">
+          <label class="button button-primary" for="screen-home">Inicio</label>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span class="footer-mark" aria-hidden="true">i</span>
+      <p>CampusMood no realiza diagnósticos, no reemplaza la atención profesional y no determina el estado de salud mental del usuario</p>
+    </footer>
+  </div>
+  <p class="storage-notice" id="storage-notice" role="status" aria-live="polite" hidden>
+    El almacenamiento local no está disponible. Tus registros se conservarán solo mientras esta página permanezca abierta.
+  </p>
+  <script src="js/almacenamiento.js"></script>
+  <script src="js/recomendaciones.js"></script>
+  <script src="js/historial.js"></script>
+  <script src="js/registro.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
