@@ -96,10 +96,14 @@
       const fecha = new Date(dia + "T00:00:00");
       const columna = crearElemento("div", "", "chart-column");
       columna.appendChild(crearElemento("span", registro ? String(registro.valor) : "–", "bar-value"));
+      columna.appendChild(crearElemento("span", registro ? estados[registro.valor].emoji : "", "bar-emoji"));
 
       const pista = crearElemento("div", "", "bar-track");
       const barra = crearElemento("span", "", "bar");
       barra.style.setProperty("--level", registro ? (registro.valor * 20) + "%" : "0%");
+      if (registro) {
+        barra.classList.add(registro.valor <= 2 ? "level-low" : registro.valor === 3 ? "level-mid" : "level-high");
+      }
       pista.appendChild(barra);
       columna.appendChild(pista);
       columna.appendChild(crearElemento(

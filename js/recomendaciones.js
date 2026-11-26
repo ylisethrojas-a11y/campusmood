@@ -10,7 +10,7 @@
         "Eleva y relaja los hombros varias veces, sin forzar el movimiento.",
         "Estira los brazos hacia arriba y luego sacude suavemente las manos."
       ],
-      frase: "Disfruta este momento: reconocer lo que te hace bien también importa.",
+      frase: "¡Qué bueno que hoy te sientes con tanta energía! Lleva ese impulso a tus clases o estudios y, si te nace, comparte un poco de esa buena actitud con quienes te rodean.",
       mostrarApoyo: false
     },
     4: {
@@ -21,7 +21,7 @@
         "Lleva los hombros hacia atrás y relájalos varias veces.",
         "Estira los brazos al frente y respira sin forzar el movimiento."
       ],
-      frase: "Vas a tu ritmo; cada pausa es una forma de cuidarte.",
+      frase: "Qué bueno que hoy encuentras cierto equilibrio. Aprovecha esta calma para avanzar paso a paso en tus metas del día, sin dejar de cuidar tu propio ritmo.",
       mostrarApoyo: false
     },
     3: {
@@ -32,7 +32,7 @@
         "Toma un poco de agua si tienes disponible.",
         "Estira suavemente las piernas y vuelve cuando te sientas listo."
       ],
-      frase: "Está bien hacer una pausa y atender lo que necesitas ahora.",
+      frase: "Hay días neutros o pesados, y no todos tienen que ser perfectos. Está bien sentirte así; tomar un respiro puede ayudarte a recargar, sin apuro.",
       mostrarApoyo: false
     },
     2: {
@@ -44,7 +44,7 @@
         "Sostén el aire durante 4 segundos, sin forzar.",
         "Exhala despacio durante 6 segundos; repite el ciclo 5 veces."
       ],
-      frase: "No tienes que resolverlo todo ahora. Puedes ir paso a paso.",
+      frase: "Si el cansancio o el estrés académico pesan hoy, tiene sentido que necesites una pausa. Baja el ritmo, suelta la presión por unos minutos y date prioridad; puedes volver a tus pendientes paso a paso.",
       mostrarApoyo: false
     },
     1: {
@@ -56,7 +56,7 @@
         "Estira con delicadeza brazos y piernas, solo hasta donde te resulte cómodo.",
         "Si te ayuda, repite la respiración con calma durante unos minutos."
       ],
-      frase: "No tienes que pasar por esto a solas. Está bien pedir apoyo.",
+      frase: "Siento que hoy esté siendo tan difícil. Lo que sientes es válido y no tienes que cargar con todo a solas: por ahora, ve con calma y permite que alguien de confianza o Bienestar Universitario te acompañe.",
       mostrarApoyo: true
     }
   };
