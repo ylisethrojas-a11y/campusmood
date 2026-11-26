@@ -57,7 +57,10 @@
       return;
     }
 
-    mostrarPausa(window.CampusMoodRecomendaciones.obtener(registroDeHoy.valor));
+    mostrarPausa(window.CampusMoodRecomendaciones.obtener(
+      registroDeHoy.valor,
+      registroDeHoy.comentario
+    ));
     const mensajeGuardado = document.getElementById("saved-message");
     mensajeGuardado.lastChild.textContent = window.CampusMoodAlmacenamiento.usaMemoria()
       ? " Registro guardado temporalmente"
@@ -90,12 +93,13 @@
       return;
     }
 
-    const recomendacion = window.CampusMoodRecomendaciones.obtener(valor);
+    const nota = comentario.value.trim();
+    const recomendacion = window.CampusMoodRecomendaciones.obtener(valor, nota);
     const nuevoRegistro = {
       fecha: fecha,
       valor: valor,
       estado: estado.texto,
-      comentario: comentario.value.trim(),
+      comentario: nota,
       pausa: recomendacion.titulo
     };
     const registrosActualizados = registros.filter(function (registro) {
